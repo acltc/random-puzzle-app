@@ -1,9 +1,19 @@
 class Puzzle
+attr_accessor :name, :instructions, :solution
 
-  def random
+  def initialize(attributes_hash)
+    @name = attributes_hash["name"]
+    @instructions = attributes_hash["instructions"]
+    @solution = attributes_hash["solution"]
+  end
 
-    random_puzzle = Unirest.get("http://localhost:3000/api/v1/puzzles/#{@rand_id}.json",
-                    :headers => {"Accept" => "application/json"}).body)
-    return 
+  def self.random
+
+    puzzles = Unirest.get("http://localhost:3000/api/v1/puzzles.json",
+                    :headers => {"Accept" => "application/json"}).body
+    puts puzzles
+    puzzles.sample
+    return Puzzle.new(puzzles.sample)
+
   end
 end
