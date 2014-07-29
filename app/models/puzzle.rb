@@ -1,7 +1,8 @@
 class Puzzle
-attr_accessor :name, :instructions, :solution
+attr_accessor :id, :name, :instructions, :solution
 
   def initialize(attributes_hash)
+    @id = attributes_hash["id"]
     @name = attributes_hash["name"]
     @instructions = attributes_hash["instructions"]
     @solution = attributes_hash["solution"]

@@ -1,3 +1,14 @@
 <h1>Here is your random puzzle of the day!</h1>
 <h3><%= @random_puzzle.name %></h3><br>
 <%= @random_puzzle.instructions %><br><br>
+
+<div class="form">
+  <%= form_tag("/puzzles/#{@random_puzzle.id}/check_code_solution") do %>
+    <fieldset>
+      <%= label_tag :code_solution %>
+      <%= text_area_tag :code_solution %>
+
+      <%= submit_tag "Check Solution" %>
+    </fieldset>
+  <% end %>
+</div>
