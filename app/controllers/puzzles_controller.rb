@@ -1,7 +1,7 @@
 class PuzzlesController < ApplicationController
 
   def show
-    @random_puzzle = Puzzle.random
+    @random_puzzle = Puzzle.random_daily
   end
 
   def check_solution

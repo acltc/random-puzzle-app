@@ -19,7 +19,6 @@ h1#puzzle_name {
 body {
   color: #00FFFF;
   background-color: black;
-
 }
 
 
@@ -31,23 +30,7 @@ fieldset {
   color: red;
 }
 
-#background {
-  background: url(../images/background.png) repeat 5% 5%;
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  z-index: 100;
+#solution {
+  font-size: 30px;
 }
 
-#midground {
-  background: url(../images/midground.png) repeat 20% 20%;
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  z-index: 200;
-}
-
-#foreground {
-  background: url(../images/foreground.png) repeat 90% 110%;
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  z-index: 300;
-}

@@ -8,13 +8,13 @@ attr_accessor :id, :name, :instructions, :solution
     @solution = attributes_hash["solution"]
   end
 
-  def self.random
+  def self.random_daily
 
-    puzzles = Unirest.get("http://localhost:3000/api/v1/puzzles.json",
+    todays_puzzle = PuzzleDay.find_by(day: Date.today)
+    puzzle = Unirest.get("http://localhost:3000/api/v1/puzzles/#{todays_puzzle.puzzle_id}.json",
                     :headers => {"Accept" => "application/json"}).body
-    puts puzzles
-    puzzles.sample
-    return Puzzle.new(puzzles.sample)
+  
+    return Puzzle.new(puzzle)
 
   end
 end

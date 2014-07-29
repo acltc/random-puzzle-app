@@ -1,20 +1,16 @@
-<div id="background">
-  <div id="midground">
-    <div id="foreground">
-      
-      <h1 id="puzzle_name">{  <%= @random_puzzle.name %>  }</h1><br>
-      <h4><%= @random_puzzle.instructions %></h4><br><br>
 
-      <div class="form">
-        <%= form_tag("/puzzles/#{@random_puzzle.id}/check_code_solution") do %>
-          <fieldset>
-            <%= label_tag :code_solution %><br>
-            <%= text_area_tag :code_solution %><br>
+<div>
+  <h1 id="puzzle_name">{  <%= @random_puzzle.name %>  }</h1><br>
+  <h4><%= @random_puzzle.instructions %></h4><br><br>
 
-            <%= submit_tag "Check Solution" %>
-          </fieldset>
-        <% end %>
-      </div>
-    </div>
-  </div> 
-</div>  
+  <div class="form">
+    <%= form_tag("/puzzles/#{@random_puzzle.id}/check_code_solution") do %>
+      <fieldset>
+        <%= label_tag :code_solution, "Code.solution =>  ", :id => "solution" %>
+        <%= text_area_tag :code_solution %><br>
+
+        <%= submit_tag "Check Solution" %>
+      </fieldset>
+    <% end %>
+  </div>
+</div>

@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+(1..476).to_a.shuffle.each_with_index do |puzzle_id, index|
+
+  PuzzleDay.create(:day => index.days.from_now, :puzzle_id => puzzle_id)
+
+end
